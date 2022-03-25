@@ -10,6 +10,11 @@ flutter create -t module --org com.example.flutter my_flutter
 这会创建一个 some/path/my_flutter/ 的 Flutter 模块项目，其中包含一些 Dart 代码来帮助你入门以及一个隐藏的子文件夹 .android/。 .android 文件夹包含一个 Android 项目，该项目不仅可以帮助你通过 flutter run 运行这个 Flutter 模块的独立应用，而且还可以作为封装程序来帮助引导 Flutter 模块作为可嵌入的 Android 库。
 > 将自己的 Android 代码添加到你现有应用程序的项目或插件中，而不是添加到 .android/ 中的模块。在模块的 .android/ 目录中所做的任何更改并不会显示在使用该模块的现有 Android 项目中。
 > 由于 .android/ 目录是自动生成的，因此不需要对它的代码进行版本控制，在新机器上构建模块之前，可以先在 my_flutter 目录中运行 flutter pub get 来重新生成 .android/ 目录，然后再使用 Flutter 模块构建 Android 项目
+### 初始化现有的Flutter模块
+```
+flutter clean
+flutter pub get
+```
 ### 将 Flutter 模块作为子项目添加到宿主应用的 settings.gradle 中
 ```
 // Include the host app project.
