@@ -9,3 +9,6 @@ evaluate(new File(                                                     // new
 ))                                                                     // new
 include ':my_flutter'
 project(':my_flutter').projectDir = new File('../my_flutter')
+//方便android项目中直接编辑flutter模块，非必须
+include ':my_flutter'
+project(':my_flutter').projectDir = new File('../my_flutter')

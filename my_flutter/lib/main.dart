@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/random_word.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -21,7 +23,10 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        'english_words': (context) => RandomWordsUI(),
+        'home': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
+      },
     );
   }
 }
