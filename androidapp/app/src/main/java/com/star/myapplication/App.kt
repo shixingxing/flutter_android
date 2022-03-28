@@ -10,8 +10,8 @@ class App : MultiDexApplication() {
         super.onCreate()
         //cache flutter
         val flutterEngine = FlutterEngine(this)
-        flutterEngine?.navigationChannel?.setInitialRoute("english_words")
-        flutterEngine?.dartExecutor?.executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault())
+        flutterEngine.navigationChannel.setInitialRoute("english_words")
+        flutterEngine.dartExecutor.executeDartEntrypoint(DartExecutor.DartEntrypoint.createDefault())
         FlutterEngineCache.getInstance().put("flutter_engine", flutterEngine)
     }
 }

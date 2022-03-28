@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding.routerFlutter.setOnClickListener {
             var routerName = binding.routerName.text.toString()
             if (routerName.isEmpty()) {
-                routerName = "home"
+                routerName = "/"
             }
             startActivity(
                 FlutterActivity
