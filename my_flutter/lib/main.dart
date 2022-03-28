@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         'english_words': (context) => RandomWordsUI(),
-        'home': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
+        '/': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
       },
     );
   }
