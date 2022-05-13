@@ -2,13 +2,12 @@ rootProject.name = "Android Application"
 include ':app'
 
 // Include the host app project.
-setBinding(new Binding([gradle: this]))                                // new
-evaluate(new File(                                                     // new
-        settingsDir.parentFile,                                              // new
-        'my_flutter/.android/include_flutter.groovy'                         // new
-))                                                                     // new
-include ':my_flutter'
-project(':my_flutter').projectDir = new File('../my_flutter')
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'my_flutter/.android/include_flutter.groovy'
+))
+
 //方便android项目中直接编辑flutter模块，非必须
 include ':my_flutter'
 project(':my_flutter').projectDir = new File('../my_flutter')
