@@ -20,10 +20,27 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            storeFile file("./keystore/tool.jks")
+            storePassword "SXX@q2020"
+            keyAlias "peter.shi"
+            keyPassword "SXX@q2020"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        profile {
+            signingConfig signingConfigs.release
+            initWith debug
+        }
+        debug {
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -40,12 +57,18 @@ android {
 
 dependencies {
 
-    implementation project(':flutter')
+    if (isFlutterAAR.toBoolean()) {
+        debugImplementation 'com.example.flutter.my_flutter:flutter_debug:1.0'
+        profileImplementation 'com.example.flutter.my_flutter:flutter_profile:1.0'
+        releaseImplementation 'com.example.flutter.my_flutter:flutter_release:1.0'
+    } else {
+        implementation project(':flutter')
+    }
 
     implementation "androidx.multidex:multidex:2.0.1"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 
 
